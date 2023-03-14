@@ -1,28 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | GitHub user search app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
 
-  devfinder
+    <title>devfinder</title>
+  </head>
+  <body>
+    <!-- CABEÇALHO -->
+    <header>
+      <nav class="top">
+        <ul class="top__list">
+          <li class="top__item">
+            <a href="#" class="logo">devfinder</a>
+          </li>
+          <li class="top__item">
+            <button class="theme-button__light">
+              <span>Light</span>
+              <img src="./assets/icon-sun.svg" alt="Sun" id="light" />
+            </button>
+          </li>
+          <li class="top__item">
+            <button class="theme-button__dark">
+              <span>Dark</span>
+              <img src="./assets/icon-moon.svg" alt="Moon" id="dark" />
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  Light
-  Dark
+    <!-- PRINCIPAL -->
+    <main class="container">
+      <!-- BARRA DE PESQUISA -->
+      <section class="search-container">
+        <form>
+          <div class="search-box">
+            <input
+              type="text"
+              placeholder="Search GitHub username…"
+              name="search"
+            />
+            <button type="submit">Search</button>
+          </div>
+        </form>
+      </section>
 
-  Search GitHub username...
-  Search
+      <!-- PERFIL DO USUÁRIO NO GIT HUB -->
+      <section class="user__container">
+        <!-- DADOS DO USUÁRIO -->
+        <div class="user__info">
+          <img
+            src="./assets/icon-avatar.svg"
+            alt="User's avatar"
+            class="user__avatar"
+          />
+          <h1 class="user__name">The Octocat</h1>
+          <h2 class="user__nickname">@octocat</h2>
+          <h3 class="user__data">Joined 25 Jan 2011</h3>
+        </div>
+        <!-- BIO DO USUÁRIO -->
+        <div class="user__bio">
+          <p class="user__bio-text">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+            odio. Quisque volutpat mattis eros.
+          </p>
+        </div>
+        <!-- NÚMEROS DO USUÁRIO -->
+        <div class="user__number">
+          <ul class="user__number-list">
+            <li class="user__number-item">
+              <span class="item-title repos">Repos</span>
+              <span class="item-text repos__number">8</span>
+            </li>
+            <li class="user__number-item">
+              <span class="item-title followers">Followers</span>
+              <span class="item-text followers__number">3938</span>
+            </li>
+            <li class="user__number-item">
+              <span class="item-title following">Following</span>
+              <span class="item-text following__number">9</span>
+            </li>
+          </ul>
+        </div>
+        <!-- OUTRAS INFORMAÇÕES DO USUÁRIO -->
+        <div class="othersInformation__container">
+          <ul class="othersInformation__list">
+            <li class="othersInformation__item">
+              <img src="./assets/icon-location.svg" alt="Location" />
+              <span class="address">San Francisco</span>
+            </li>
+            <li class="othersInformation__item">
+              <img src="./assets/icon-website.svg" alt="Website" />
+              <span class="website">https://github.blog</span>
+            </li>
+            <li class="othersInformation__item">
+              <img src="./assets/icon-twitter.svg" alt="Twitter" />
+              <span class="twitter">Not Available</span>
+            </li>
+            <li class="othersInformation__item">
+              <img src="./assets/icon-company.svg" alt="Company" />
+              <span class="company">@github</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
 
-  Joined
-
-  Repos
-  Followers
-  Following
-
-</body>
+    <script src="../js/index.js"></script>
+  </body>
 </html>
