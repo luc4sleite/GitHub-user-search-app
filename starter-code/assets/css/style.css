@@ -250,6 +250,10 @@ button[type="submit"] {
     color: var(--light-mode-gray);
 }
 
+.othersInformation__item svg path {
+  fill: red;
+}
+
 .address {
     padding-left: 0.3rem;
 }
