@@ -1,6 +1,31 @@
+:root {
+  
+  /* LIGHT MODE THEME */
+  --light-mode-background: #F6F8FF;
+  --light-mode-card-color: #FEFEFE;
+  --light-mode-logo-color: #222731;
+  --light-mode-black: #2B3442;
+  --light-mode-gray: #4B6A9B;
+  --light-mode-stats-color: #F6F8FF;
+  --light-mode-text: #222731;
+  --light-mode-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+
+  
+  /* DARK MODE THEME */
+  --dark-mode-background: #141D2F;
+  --dark-mode-card-color: #1E2A47;  
+
+  /* COMOM COLORS */
+  --blue: #0079FF;
+  --white: #FFFFFF;
+  --grey: #697C9A;
+
+}
+
+
 body {
   font-family: "Space Mono", monospace;
-  background-color: #f6f8ff;
+  background-color: var(--light-mode-background);
   height: 100vh;
 }
 
@@ -16,7 +41,7 @@ body {
 .logo {
   font-size: 26px;
   font-weight: 700;
-  color: #222731;
+  color: var(--light-mode-logo-color);
 }
 
 .theme-button__dark {
@@ -27,7 +52,7 @@ body {
   text-transform: uppercase;
   text-align: right;
   letter-spacing: 2.5px;
-  color: #4b6a9b;
+  color: var(--light-mode-gray);
 }
 
 .theme-button__dark img {
@@ -42,7 +67,8 @@ body {
   text-transform: uppercase;
   text-align: right;
   letter-spacing: 2.5px;
-  color: #ffffff;
+  padding-left: 7.5rem;
+  color: var(--white);
 }
 
 .theme-button__light img {
@@ -62,8 +88,8 @@ form {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #fff;
-  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  background-color: var(--white);
+  box-shadow: var(--light-mode-shadow);
   border-radius: 15px;
   width: 327px;
   height: 60px;
@@ -77,33 +103,46 @@ input[type="text"] {
   margin-left: 8px;
   text-align: left;
   font-size: 13px;
+  /* color: var(--light-mode-text); */
+  font-weight: 400;
   width: 327px;
   border: none;
   border-radius: 15px;
   background-image: url("../img/icon-search.svg");
-  background-size: 20.05px 20px;
+  background-color: var(--light-mode-card-color);
   background-repeat: no-repeat;
   background-position: 6px;
 }
 
-input[type="text"]::placeholder {
-  color: #4b6a9b;
+.search-bar::placeholder {
+  color: var(--light-mode-gray);
+  opacity: 1;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.input__dark-theme::-webkit-input-placeholder {
+  color: var(--white);
 }
 
 button[type="submit"] {
   padding: 14px 16px;
   margin-right: 0.5rem;
   border: none;
-  background: #0079ff;
+  background: var(--blue);
   border-radius: 10px;
   font-size: 14px;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
 }
 
+/* DADOS DO USUÁRIO */
+
 .user__container {
-  background: #fefefe;
-  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  background: var(--light-mode-card-color);
+  box-shadow: var(--light-mode-shadow);
   border-radius: 15px;
   margin: 2rem 1.5rem;
 }
@@ -125,20 +164,20 @@ button[type="submit"] {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #2b3442;
+  color: var(--light-mode-black);
   align-self: flex-end;
 }
 
 .user__nickname {
   font-weight: 400;
   font-size: 13px;
-  color: #0079ff;
+  color: var(--blue);
 }
 
 .user__data {
   font-weight: 400;
   font-size: 13px;
-  color: #697c9a;
+  color: var(--grey);
 }
 
 .user__bio {
@@ -149,11 +188,14 @@ button[type="submit"] {
   font-weight: 400;
   font-size: 13px;
   line-height: 25px;
-  color: #4b6a9b;
+  color: var(--light-mode-gray);
 }
 
+
+/* NÚMEROS DO USUÁRIO */
+
 .user__number {
-  background: #f6f8ff;
+  background: var(--light-mode-background);
   border-radius: 10px;
   margin: 0 1.5rem 2rem 1.5rem;
 }
@@ -172,7 +214,7 @@ button[type="submit"] {
   font-size: 11px;
   line-height: 16px;
   text-align: center;
-  color: #4b6a9b;
+  color: var(--light-mode-gray);
   margin-bottom: 1rem;
 }
 
@@ -182,8 +224,10 @@ button[type="submit"] {
     line-height: 40px;
     text-align: center;
     text-transform: uppercase;
-    color: #2B3442;
+    color: var(--light-mode-black);
 }
+
+/* OUTRAS INFORMAÇÕES DO USUÁRIO */
 
 .othersInformation__list {
     display: flex;
@@ -203,7 +247,7 @@ button[type="submit"] {
     font-weight: 400;
     font-size: 13px;
     line-height: 19px;
-    color: #4B6A9B;
+    color: var(--light-mode-gray);
 }
 
 .address {
