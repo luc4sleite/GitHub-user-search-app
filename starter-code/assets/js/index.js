@@ -22,6 +22,7 @@ let itemText = document.querySelectorAll(".item-text");
 
 // OUTRAS INFORMAÇÕES DO USUÁRIO
 let itemInformation = document.querySelectorAll(".othersInformation__item");
+let icon = document.querySelectorAll("path");
 
 // MUDANÇA DO TEMA
 
@@ -57,6 +58,10 @@ darkButton.addEventListener("click", function () {
   for (let i = 0; i < itemInformation.length; i++) {
     itemInformation[i].style.color = "var(--white)";
   }
+  for (let i = 0; i < icon.length; i++) {
+    icon[i].style.fill = "var(--white)";
+    
+  }
 });
 
 // TEMA CLARO
@@ -90,5 +95,9 @@ lightButton.addEventListener("click", function () {
   //   OUTRAS INFORMAÇÕES DO USUÁRIO
   for (let i = 0; i < itemInformation.length; i++) {
     itemInformation[i].style.color = "var(--light-mode-gray)";
+  }
+  for (let i = 0; i < icon.length; i++) {
+    icon[i].style.fill = "var(--light-mode-gray)";
+    
   }
 });

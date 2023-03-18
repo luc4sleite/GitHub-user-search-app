@@ -31,10 +31,13 @@ body {
 
 /* CABEÇALHO */
 
-.top__list {
+header {
+  padding: 0;
+}
+
+.top{
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin: 2rem 1.5rem;
 }
 
@@ -67,7 +70,6 @@ body {
   text-transform: uppercase;
   text-align: right;
   letter-spacing: 2.5px;
-  padding-left: 7.5rem;
   color: var(--white);
 }
 
@@ -251,9 +253,99 @@ button[type="submit"] {
 }
 
 .othersInformation__item svg path {
-  fill: red;
+  fill: var(--light-mode-gray);
 }
 
 .address {
     padding-left: 0.3rem;
+}
+
+
+/* TABLET */
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+  header {
+    padding: 0 6rem;
+  }
+  
+  .top{
+    display: flex;
+    justify-content: space-between;
+    margin: 6rem 0 2rem 0;
+    align-items: center;
+  }
+
+  .search-box {
+    max-width: 573px;
+    width: 90vw;
+    margin: 0 1.5rem;
+  }
+
+  input[type="text"] {
+    font-size: 18px;
+  }
+
+  button[type="submit"] {
+    font-size: 16px;
+  }
+
+  .user__container {
+    max-width: 573px;
+    max-height: 648px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .user__info {
+    padding: 2rem 1.5rem;
+  }
+
+  .user__avatar {
+    width: 117px;
+    height: 117px;
+  }
+
+  .user__name {
+    font-size: 26px;
+  }
+
+  .user__nickname {
+    font-size: 16px;
+    align-self: center;
+  }
+
+  .user__data {
+    font-size: 15px;
+  }
+
+  .user__bio-text {
+    font-size: 15px;
+    padding-left: 1.5rem;
+  }
+
+  .user__number {
+    margin: 0 2.5rem 2rem 2.5rem;
+  }
+  
+  .user__number-list {
+    justify-content: space-between;
+  }
+
+  .user__number-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  .item-title {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .item-text {
+    font-size: 22px;
+    text-align: left;
+  }
+
 }
