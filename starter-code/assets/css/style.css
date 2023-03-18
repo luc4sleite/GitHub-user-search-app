@@ -324,7 +324,7 @@ button[type="submit"] {
   }
 
   .user__number {
-    margin: 0 2.5rem 2rem 2.5rem;
+    margin: 0 2.5rem 0 2.5rem;
   }
   
   .user__number-list {
@@ -346,6 +346,22 @@ button[type="submit"] {
   .item-text {
     font-size: 22px;
     text-align: left;
+  }
+
+  .othersInformation__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+  }
+
+  .wsite {
+    grid-column: 1/2;
+  }
+
+  .twt {
+    grid-column: 2/3;
+    grid-row: 1/2;
   }
 
 }
