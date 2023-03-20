@@ -26,20 +26,18 @@ Os usuários poderão:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot 2023-03-19 at 23-28-57 devfinder](https://user-images.githubusercontent.com/115735167/226232924-55ed5e95-4ece-40e6-8fd4-3179a75589b4.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+![Screenshot 2023-03-19 at 23-32-46 devfinder](https://user-images.githubusercontent.com/115735167/226233339-48696f51-6bec-4c08-b01a-6ef9b132d7b3.png)
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+![app_](https://user-images.githubusercontent.com/115735167/226233392-ce73bd30-ce70-410d-a14e-38d4c6cd580a.gif)              ![app_2](https://user-images.githubusercontent.com/115735167/226233735-936072f1-2301-46f6-98ae-a07009925fbf.gif)
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/github-users-search-app-qQ3W4IfJQo](https://www.frontendmentor.io/solutions/github-users-search-app-qQ3W4IfJQo)
+- Live Site URL: [https://git-hub-user-search-app-steel.vercel.app/](https://git-hub-user-search-app-steel.vercel.app/)
 
 ## Meu processo
 
