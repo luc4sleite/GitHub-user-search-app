@@ -162,8 +162,11 @@ button[type="submit"] {
 .user__avatar {
   grid-column: 1 / 2;
   grid-row: 1 / 4;
-  padding: 0 1.5rem;
-  padding-top: 2rem;
+  margin: 2rem 1rem 0.5rem 1.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 117px;
+  object-fit: contain;
 }
 
 .user__name {
@@ -176,7 +179,7 @@ button[type="submit"] {
   padding-top: 2rem;
 }
 
-.user__nickname {
+.user__login {
   font-weight: 400;
   font-size: 13px;
   color: var(--blue);
@@ -323,7 +326,7 @@ button[type="submit"] {
     font-size: 26px;
   }
 
-  .user__nickname {
+  .user__login {
     font-size: 16px;
     align-self: center;
   }
@@ -414,14 +417,14 @@ button[type="submit"] {
   .user__avatar {
     grid-column: 1/2;
     grid-row: 1 / 7;
-    padding: 2rem 0 0 3rem;
+    margin: 2rem 0.5rem 0.5rem 2rem;
   }
 
   .user__name {
     padding-left: 2.5rem;
   }
 
-  .user__nickname {
+  .user__login {
     padding: 0.5rem 0 0 2.5rem;
   }
 

@@ -1,28 +1,39 @@
-let body = document.querySelector("body");
+const body = document.querySelector("body");
 
 // CABEÇALHO
-let darkButton = document.querySelector(".theme-button__dark");
-let lightButton = document.querySelector(".theme-button__light");
-let logo = document.querySelector(".logo");
+const darkButton = document.querySelector(".theme-button__dark");
+const lightButton = document.querySelector(".theme-button__light");
+const logo = document.querySelector(".logo");
 
 // BARRA DE PESQUISA
-let searchBox = document.querySelector(".search-box");
-let searchBar = document.querySelector('input[type="text"]');
+const searchBox = document.querySelector(".search-box");
+const searchBar = document.querySelector('input[type="text"]');
+const searchButton = document.querySelector(".search__button");
+const errors = document.querySelector(".error");
 
 // DADOS DO USUÁRIO
-let userContainer = document.querySelector(".user__container");
-let userName = document.querySelector(".user__name");
-let userData = document.querySelector(".user__data");
-let userBio = document.querySelector(".user__bio");
+const userContainer = document.querySelector(".user__container");
+let userAvatar = document.querySelector(".user__avatar");
+const userName = document.querySelector(".user__name");
+const userLogin = document.querySelector(".user__login");
+const userData = document.querySelector(".user__data");
+const userBio = document.querySelector(".user__bio");
 
 // NÚMEROS DO USUÁRIO
-let userNumber = document.querySelector(".user__number");
-let itemTitle = document.querySelectorAll(".item-title");
-let itemText = document.querySelectorAll(".item-text");
+const userNumber = document.querySelector(".user__number");
+const repos = document.querySelector(".repos__number");
+const followers = document.querySelector(".followers__number");
+const following = document.querySelector(".following__number");
+const itemTitle = document.querySelectorAll(".item-title");
+const itemText = document.querySelectorAll(".item-text");
 
 // OUTRAS INFORMAÇÕES DO USUÁRIO
-let itemInformation = document.querySelectorAll(".othersInformation__item");
-let icon = document.querySelectorAll("path");
+const itemInformation = document.querySelectorAll(".othersInformation__item");
+const address = document.querySelector(".address");
+const website = document.querySelector(".website");
+const twitter = document.querySelector(".twitter");
+const company = document.querySelector(".company");
+const icon = document.querySelectorAll("path");
 
 // MUDANÇA DO TEMA
 
@@ -38,7 +49,9 @@ darkButton.addEventListener("click", function () {
   searchBox.style.backgroundColor = "var(--dark-mode-card-color)";
   searchBox.style.boxShadow = "none";
   searchBar.style.backgroundColor = "var(--dark-mode-card-color)";
+  searchBar.style.color = "var(--white)";
   searchBar.classList.add("input__dark-theme");
+  
 
   //   DADOS DO USUÁRIO
   userContainer.style.boxShadow = "none";
@@ -60,7 +73,6 @@ darkButton.addEventListener("click", function () {
   }
   for (let i = 0; i < icon.length; i++) {
     icon[i].style.fill = "var(--white)";
-    
   }
 });
 
@@ -98,6 +110,66 @@ lightButton.addEventListener("click", function () {
   }
   for (let i = 0; i < icon.length; i++) {
     icon[i].style.fill = "var(--light-mode-gray)";
-    
   }
 });
+
+// BUSCA INFORMAÇÕES DO USUÁRIO
+
+async function onClickSearchBox(event) {
+  event.preventDefault();
+  const username = searchBar.value;
+  const url = `https://api.github.com/users/${username}`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    if (response.ok) {
+      const dateData = data.created_at.slice(0, data.created_at.length - 10);
+
+  
+    userAvatar.src = data.avatar_url;
+    userName.innerHTML = data.name;
+    userLogin.innerHTML = `@${data.login}`;
+    userData.innerHTML = `Joined ${dateData}`;
+    userBio.innerHTML =
+      data.bio === "" || data.bio === null
+        ? "This profile has no bio..."
+        : data.bio;
+
+    repos.innerHTML = data.public_repos;
+    followers.innerHTML = data.followers;
+    following.innerHTML = data.following;
+
+    address.innerHTML =
+      data.location === "" || data.location === null
+        ? "No Location"
+        : data.location;
+
+    twitter.innerHTML =
+      data.twitter_username === "" || data.twitter_username === null
+        ? "Not avaiable"
+        : data.twitter_username;
+
+    website.innerHTML =
+      data.blog === "" || data.blog === null ? "Not avaiable" : data.blog;
+
+    company.innerHTML =
+      data.company === "" || data.company === null
+        ? "Not avaiable"
+        : data.company;
+
+    searchBar.value = "";
+    } else if (response.status === 404){
+      errors.style.display = "block";
+      searchBar.value = "";
+    } else {
+      throw new Error(`Erro ${response.status} ao buscar usuário`);
+    }
+  } catch (error) {
+    console.error(error);
+    errors.style.display = "block";
+    searchBar.value = "";
+  }
+  
+}
+
+searchButton.addEventListener("click", onClickSearchBox);
